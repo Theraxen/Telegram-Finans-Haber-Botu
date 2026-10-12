@@ -1,10 +1,9 @@
 import requests
-import time
+import os
 
-# === KULLANICI AYARLARI ===
-TELEGRAM_TOKEN = "8800549597:AAEVeeN9oGMFIIZpU88VZm8B8sT7RU1sDbA"
-CHAT_ID = "969041165"
-NEWS_API_KEY = "c6cec00f58434e3f861a27b20a27b39e"
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+CHAT_ID = os.environ.get("CHAT_ID")
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
 
 # Takip edilecek anahtar kelimeler (İstediğin gibi ekleyip çıkarabilirsin)
 ARANACAK_KELIMELER = ["Micron", "MU", "Trump", "MP Materials"]
