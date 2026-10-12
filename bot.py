@@ -1,6 +1,6 @@
 import requests
 import os
-
+import time
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
 NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
