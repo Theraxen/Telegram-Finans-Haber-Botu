@@ -1,6 +1,7 @@
 import requests
 import os
 import time
+
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
 NEWS_API_KEY = os.environ.get("NEWS_API_KEY")
@@ -41,14 +42,11 @@ def haberleri_getir():
     return bulunan_haberler
 
 if __name__ == "__main__":
-    telegram_mesaj_gonder("🚀 Finans ve Makro Olay Botu aktif edildi. Taramalar başlıyor...")
+    print("🚀 Finans ve Makro Olay Botu aktif edildi. Taramalar başlıyor...")
     
-    # Döngü sayesinde script kapanana kadar çalışmaya devam eder
-    while True:
-        yeni_haberler = haberleri_getir()
-        for haber in yeni_haberler:
-            telegram_mesaj_gonder(haber)
-            time.sleep(2) # Telegram limitlerine takılmamak için 2 saniye es
+    yeni_haberler = haberleri_getir()
+    for haber in yeni_haberler:
+        telegram_mesaj_gonder(haber)
+        time.sleep(2) # Telegram limitlerine takılmamak için 2 saniye es
         
-        print("Tarama tamamlandı. Bir sonraki tarama için 1 saat bekleniyor...")
-        time.sleep(3600) # Kodu 1 saat uyutur (3600 saniye)
+    print("Tarama tamamlandı. GitHub Actions botu başarılı bir şekilde kapattı.")
